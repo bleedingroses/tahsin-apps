@@ -37,7 +37,7 @@
                                         <h4 class="card-title"><span class="lstick"></span>What To Do</h4>
                                         <h6 class="card-subtitle">List of your next task to complete</h6></div>
                                     <div class="ml-auto">
-                                        <button class="pull-right btn btn-sm btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
+                                        <button class="pull-right btn btn-sm btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Tambah</button>
                                     </div>
                                 </div>
                                 <!-- ============================================================== -->
@@ -53,19 +53,11 @@
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form>
+                                                    <form class="needs-validation" method="POST">
+                                                        @csrf
                                                         <div class="form-group">
-                                                            <label>Nama Tugas</label>
-                                                            <input type="text" class="form-control" placeholder="Enter Task Name"> </div>
-                                                        <div class="form-group">
-                                                            <label>Nama Karyawan</label>
-                                                            <select class="custom-select form-control pull-right">
-                                                                <option selected="">Redo</option>
-                                                                <option value="1">Redo</option>
-                                                                <option value="2">Azzam</option>
-                                                                <option value="3">Faisal</option>
-                                                                <option value="4">Akbar</option>
-                                                            </select>
+                                                            <label for="name">Nama Tugas</label>
+                                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Agenda">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -80,18 +72,10 @@
                                     </div>
                                     <!-- /.modal -->
                                     <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
-                                        <li class="list-group-item" data-role="task">
-                                            <div class="checkbox checkbox-info">
-                                                <input type="checkbox" id="inputSchedule" name="inputCheckboxesSchedule">
-                                                <label for="inputSchedule" class=""> <span>Jadwal Tahsin</span> <span class="label label-rounded label-danger pull-right">Today</span></label>
-                                            </div>
-                                            <ul class="assignedto">
-                                                <li><img src="assets/images/users/1.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Steave"></li>
-                                                <li><img src="assets/images/users/2.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Jessica"></li>
-                                                <li><img src="assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                                                <li><img src="assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-                                            </ul>
-                                        </li>
+                                        @php $no = 1; @endphp
+                                        @foreach ($posts as $post)
+                                            <li class="list-group-item" data-role="task">{{ $no++ }}. {{ $post->name }}</li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -130,39 +114,5 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap popper Core JavaScript -->
-    <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="horizon/js/perfect-scrollbar.jquery.min.js"></script>
-    <!--Wave Effects -->
-    <script src="horizon/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="horizon/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="horizon/js/custom.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
-    <!--sparkline JavaScript -->
-    <script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!--morris JavaScript -->
-    <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <!--c3 JavaScript -->
-    <script src="assets/plugins/d3/d3.min.js"></script>
-    <script src="assets/plugins/c3-master/c3.min.js"></script>
-    <!-- Popup message jquery -->
-    <script src="assets/plugins/toast-master/js/jquery.toast.js"></script>
-    <!-- Chart JS -->
-    <script src="horizon/js/dashboard1.js"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
 @endsection

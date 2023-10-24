@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TahsinController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('skudetto.index');
-});
+Route::get('/',[TodoController::class, 'index']);
+Route::post('/',[TodoController::class, 'tambah']);
+
 
 Route::get('/calendar', function () {
     return view('calendar');
