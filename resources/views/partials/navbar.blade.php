@@ -24,9 +24,9 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="100" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="90" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="100" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="90" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
