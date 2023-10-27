@@ -66,7 +66,7 @@ class TahsinController extends Controller
 
     public function profile($id)
     {
-        $category = Category::find($id);
-        return view('tahsin.profile');
+        $tahsin = Tahsin::find($id);
+        return view('tahsin.profile', ['tahsin'=> $tahsin]);
     }
 }

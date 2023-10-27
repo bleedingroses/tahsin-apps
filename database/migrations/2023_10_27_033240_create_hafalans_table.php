@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tahsins', function (Blueprint $table) {
+        Schema::create('hafalans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->nullable();
-            $table->string('jadwal')->nullable();
-            $table->string('gambar')->nullable();
-            $table->string('nama')->nullable();
+            $table->foreignId('tahsin_id');
+            $table->string('juz');
+            $table->string('surat');
+            $table->string('ayat');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tahsins');
+        Schema::dropIfExists('hafalans');
     }
 };

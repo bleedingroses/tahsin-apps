@@ -16,4 +16,9 @@ class Tahsin extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function hafalan()
+    {
+        return $this->hasMany(Hafalan::class);
+    }
+
 }
