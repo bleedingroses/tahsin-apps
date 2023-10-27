@@ -33,12 +33,8 @@
                                 <input type="text" class="form-control" name="nama" id="nama" required>
                             </div><br>
                             <div class="mb-3 w-50">
-                                <label for="surat" class="form-label"><h5>Nama Surat</h5></label>
-                                <input type="text" class="form-control" name="surat" id="surat" required>
-                            </div><br>
-                            <div class="mb-3 w-50">
-                                <label for="ayat" class="form-label"><h5>Ayat</h5></label>
-                                <input type="text" class="form-control" name="ayat" id="ayat" required>
+                                <label for="jadwal" class="form-label"><h5>Jadwal</h5></label>
+                                <input type="text" class="form-control" name="jadwal" id="jadwal" required>
                             </div><br>
                             <div class="mb-3 w-50">
                                 <label for="gambar" class="form-label"><h5>Upload Gambar</h5></label>
