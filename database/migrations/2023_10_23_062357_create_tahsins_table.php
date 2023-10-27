@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('jadwal');
             $table->string('gambar')->nullable();
             $table->string('nama');
-            $table->string('surat');
-            $table->string('ayat');
             $table->timestamps();
         });
     }

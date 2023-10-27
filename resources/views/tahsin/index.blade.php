@@ -23,8 +23,8 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-10">
                         <div class="card">                            
                                     <div class="right-page-header">
                                             <div class="align-self-center">
@@ -45,9 +45,6 @@
                                                     <th>Nama</th>
                                                     <th>Grup</th>
                                                     <th>Jadwal</th>
-                                                    <th>Juz</th>
-                                                    <th>Nama Surat</th>
-                                                    <th>Ayat</th>
                                                     <th>Pengajar</th>
                                                 </tr>
                                             </thead>
@@ -69,9 +66,6 @@
                                                         <td>{{$tahsin['nama']}}</td>
                                                         <td>{{ $tahsin->category->grup }}</td>
                                                         <td>{{$tahsin['jadwal']}}</td>
-                                                        <td>Juz 30</td>
-                                                        <td>{{$tahsin['surat']}}</td>
-                                                        <td>{{$tahsin['ayat']}}</td>
                                                         <td>Ustadz Fauzi Ahmad</td>
                                                     </tr>
                                                 </tbody>
