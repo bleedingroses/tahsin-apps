@@ -63,4 +63,10 @@ class TahsinController extends Controller
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function profile($id)
+    {
+        $category = Category::find($id);
+        return view('tahsin.profile');
+    }
 }

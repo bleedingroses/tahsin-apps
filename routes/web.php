@@ -33,3 +33,5 @@ Route::delete('/tahsin/{id}',[TahsinController::class, 'destroy']);
 
 Route::get('/tahsin/tambahg',[CategoryController::class, 'tambahg']);
 Route::post('/tahsin/simpang',[CategoryController::class, 'simpang']);
+
+Route::get('/tahsin/{id}/profile', [TahsinController::class, 'profile']);

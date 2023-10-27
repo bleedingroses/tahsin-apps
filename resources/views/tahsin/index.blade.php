@@ -62,8 +62,8 @@
                                                                 </form>
                                                             </div>
                                                         </td>
-                                                        <td><img src="{{ asset('img/'.$tahsin->gambar) }}" width="100" alt=""></td>
-                                                        <td>{{$tahsin['nama']}}</td>
+                                                        <td><img src="{{ asset('img/'.$tahsin->gambar) }}" width="60" alt=""></td>
+                                                        <td><a href="/tahsin/{{ $tahsin->id }}/profile">{{ $tahsin->nama }}</a></td>
                                                         <td>{{ $tahsin->category->grup }}</td>
                                                         <td>{{$tahsin['jadwal']}}</td>
                                                         <td>Ustadz Fauzi Ahmad</td>
