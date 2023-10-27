@@ -70,11 +70,6 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">PERSONAL</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-calendar"></i><span class="hide-menu">Kalender</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="/calendar">Kalender</a></li>
-                            </ul>
-                        </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Tahsin</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/tahsin">Daftar Santri</a></li>
