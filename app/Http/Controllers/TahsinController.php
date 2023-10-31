@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Tahsin;
+use App\Models\Hafalan;
 use Illuminate\Http\Request;
 
 class TahsinController extends Controller
@@ -67,6 +68,7 @@ class TahsinController extends Controller
     public function profile($id)
     {
         $tahsin = Tahsin::find($id);
-        return view('tahsin.profile', ['tahsin'=> $tahsin]);
+        $tahfidz = Hafalan::all();
+        return view('tahsin.profile', ['tahsin'=> $tahsin, 'hafalan'=> $tahfidz]);
     }
 }

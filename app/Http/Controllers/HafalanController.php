@@ -7,14 +7,9 @@ use App\Models\Tahsin;
 
 class HafalanController extends Controller
 {
-    public function hafal($id)
+    public function index()
     {
-        $hafal = Hafalan::find($id);
-        return view('tahsin.profile', ['hafalan'=> $hafal]);
-    }
-
-    public function hafalan()
-    {
-        return $this->belongsTo(Tahsin::class);
+        $hafalan = Hafalan::all();
+        return view("tahsin.hafalan", ['hafalan'=> $hafalan]);
     }
 }

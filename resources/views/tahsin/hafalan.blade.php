@@ -11,10 +11,7 @@
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles justify-content-around">
-                    <a class="link-light" href="/tahsin/tambah"><button type="button" class="btn btn-info btn-rounded">Tambah Data Santri</button></a>
-                </div>   
+                <!-- ============================================================== -->   
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
@@ -26,52 +23,30 @@
                         <div class="card">                            
                                     <div class="right-page-header">
                                             <div class="align-self-center">
-                                                <h4 class="card-title m-t-10 text-center">Daftar Santri</h4></div>
+                                                <h4 class="card-title m-t-10 text-center">Daftar Surat</h4></div>
                                     </div>
-                                    @if ($message = Session::get('success'))
-                                    <div class="alert alert-info" role="alert">
-                                        {{ $message }}
-                                    </div>
-                                @endif
                                     <div class="table-responsive justify-content-center">
                                         <table id="demo-foo-addrow" class="table table-hover no-wrap contact-list">
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Aksi</th>
-                                                    <th>Gambar</th>
-                                                    <th>Nama</th>
-                                                    <th>Grup</th>
-                                                    <th>Jadwal</th>
-                                                    <th>Hafalan</th>
+                                                    <th>Juz</th>
+                                                    <th>Nama Surat</th>
                                                 </tr>
                                             </thead>
-                                            @foreach($tahsins as $index => $tahsin)
+                                            @php $no = 1; @endphp
+                                            @foreach($hafalan as $hafal)
                                                 <tbody>
                                                     <tr>
-                                                        <td>{{ $index + $tahsins->firstItem() }}</td>
-                                                        <td>
-                                                            <div role="group" aria-label="Vertical radio toggle button group">
-                                                                <a class="btn btn-outline-info btn-rounded mb-2" href="/tahsin/{{$tahsin->id}}/ubah">Ubah</a>
-                                                                <form action="/tahsin/{{$tahsin->id}}" method="post">
-                                                                    @csrf
-                                                                    @method('delete')
-                                                                    <input class="btn btn-info btn-rounded" type="submit" value="Hapus">
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                        <td><img src="{{ asset('img/'.$tahsin->gambar) }}" width="60" alt=""></td>
-                                                        <td><a href="/tahsin/{{ $tahsin->id }}/profile">{{ $tahsin->nama }}</a></td>
-                                                        <td>{{ $tahsin->category->grup }}</td>
-                                                        <td>{{$tahsin['jadwal']}}</td>
-                                                        <td>{{ $tahsin->hafalan->count() }} Surat</td>
+                                                        <td>{{ $no++ }}</td>
+                                                        <td>{{ $hafal->juz }}</td>
+                                                        <td>{{ $hafal->surat }}</td>
                                                     </tr>
                                                 </tbody>
                                             @endforeach
                                         </table>
                                     </div>
                         </div>
-                        <div class="d-flex justify-content-center">{{ $tahsins->links('vendor.pagination.simple-tailwind') }}</div>
                     </div>
                 </div>
                 <!-- ============================================================== -->

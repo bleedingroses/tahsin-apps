@@ -28,6 +28,11 @@ class CategoryController extends Controller
             $data->gambar = $request->file('gambar')->getClientOriginalName();
             $data->save();
         }
-        return redirect('/tahsin')->with('success', 'Grup Berhasil Ditambahkan!');
+        return redirect('/tahsin/grup')->with('success', 'Grup Berhasil Ditambahkan!');
+    }
+    public function index()
+    {
+        $categories = Category::all();
+        return view('tahsin.grup', ['categories'=> $categories]);
     }
 }

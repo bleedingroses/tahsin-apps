@@ -79,6 +79,16 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/tahsin">Daftar Santri</a></li>
                             </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Grup</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/tahsin/grup">Daftar Grup</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-lightbulb-on-outline"></i><span class="hide-menu">Hafalan</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/tahsin/hafalan">Daftar Hafalan</a></li>
+                            </ul>
                         </li>                   
                     </ul>
                 </nav>

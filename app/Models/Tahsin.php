@@ -18,7 +18,7 @@ class Tahsin extends Model
 
     public function hafalan()
     {
-        return $this->hasMany(Hafalan::class);
+        return $this->belongsToMany(Hafalan::class)->withPivot(['ayat']);
     }
 
 }
