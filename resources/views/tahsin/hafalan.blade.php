@@ -30,7 +30,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Juz</th>
                                                     <th>Nama Surat</th>
                                                 </tr>
                                             </thead>
@@ -39,7 +38,6 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>{{ $no++ }}</td>
-                                                        <td>{{ $hafal->juz }}</td>
                                                         <td>{{ $hafal->surat }}</td>
                                                     </tr>
                                                 </tbody>

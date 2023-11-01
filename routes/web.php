@@ -32,5 +32,7 @@ Route::get('/tahsin/tambahg',[CategoryController::class, 'tambahg']);
 Route::post('/tahsin/simpang',[CategoryController::class, 'simpang']);
 
 Route::get('/tahsin/{id}/profile', [TahsinController::class, 'profile']);
-Route::post('/tahsin/{id}/profile', [TahsinController::class, 'tahfidz']);
+Route::post('/tahsin/{id}/tahfidz', [TahsinController::class, 'tahfidz']);
+
+
 Route::get('/tahsin/hafalan', [HafalanController::class,'index']);

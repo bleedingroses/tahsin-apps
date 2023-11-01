@@ -68,7 +68,16 @@ class TahsinController extends Controller
     public function profile($id)
     {
         $tahsin = Tahsin::find($id);
-        $tahfidz = Hafalan::all();
-        return view('tahsin.profile', ['tahsin'=> $tahsin, 'hafalan'=> $tahfidz]);
+        $hafalan = Hafalan::all();
+        return view('tahsin.profile', ['tahsin'=> $tahsin, 'hafalan'=> $hafalan]);
+    }
+    public function tahfidz(Request $request, $idtahsin)
+    {
+        $tahsin = Tahsin::find($idtahsin);
+        if( $tahsin->hafalan()->where('hafalan_id', $request->surat)->exists()){
+            return redirect('tahsin/' .$idtahsin. '/profile')->with('error', 'Data Sudah Ada!');;
+        }
+        $tahsin->hafalan()->attach($request->surat, ['ayat'=> $request->ayat]);
+        return redirect('tahsin/' .$idtahsin. '/profile')->with('success', 'Data Berhasil Ditambah!');;
     }
 }

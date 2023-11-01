@@ -11,12 +11,22 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row justify-content-center">
                     <div class="col-10">
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" aria-hidden="true">
                             Tambah Hafalan
                         </button><br><br>
                         <!-- .modal for add task -->
@@ -28,25 +38,27 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form class="needs-validation" method="POST">
+                                        <form action="/tahsin/{{ $tahsin->id }}/tahfidz" class="needs-validation" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                                <label for="juz">Juz</label>
-                                                <input type="text" class="form-control" name="juz" id="juz">
+                                                <label for="surat">Juz</label>
+                                                <select class="form-control" name="surat" id="surat">
+                                                    @foreach ($hafalan as $hafal)
+                                                        <option value="{{ $hafal->id }}">{{ $hafal->surat }}</option>                                                    
+                                                    @endforeach
+                                                </select>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="surat">Surat</label>
-                                                <input type="text" class="form-control" name="surat" id="surat">
-                                            </div>
-                                            <div class="form-group">
+                                            <div>
                                                 <label for="ayat">Ayat</label>
-                                                <input type="text" class="form-control" name="ayat" id="ayat">
+                                                <input type="text" name="ayat" class="form-control" id="ayat" placeholder="Ayat" value="{{ old('ayat') }}">
+                                                @if ($errors->has('ayat'))
+                                                    <span class="help-block">{{ $errors->first('ayat') }}</span>
+                                                @endif
                                             </div>
-                                        </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+                                        <button type="submit" class="btn btn-info">Tambah</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <!-- /.modal-content -->
@@ -62,7 +74,6 @@
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Juz</th>
                                                     <th>Surat</th>
                                                     <th>Ayat</th>
                                                 </tr>
@@ -72,7 +83,6 @@
                                             <tbody>
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
-                                                    <td>{{ $hafalan->juz }}</td>
                                                     <td>{{ $hafalan->surat }}</td>
                                                     <td>{{ $hafalan->pivot->ayat }}</td>
                                                 </tr>
