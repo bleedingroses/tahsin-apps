@@ -23,15 +23,11 @@
                     <a class="navbar-brand" href="/">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="90" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
                             <img src="{{ asset('assets/images/tahsin-fix3.png') }}" width="90" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="{{ asset('assets/images/tafio-fix.png') }}" width="125" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->
                          <img src="{{ asset('assets/images/tafio-fix.png') }}" width="125" class="light-logo" alt="homepage" /></span>
                     </a>
@@ -70,22 +66,22 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">PERSONAL</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-wunderlist"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="has-arrow waves-effect" href="#" aria-expanded="false"><i class="mdi mdi-wunderlist"></i><span class="hide-menu">Dashboard</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/">Dashboard</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Tahsin</span></a>
+                        <li> <a class="has-arrow waves-effect" href="#" aria-expanded="false"><i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Tahsin</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/tahsin">Daftar Santri</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Grup</span></a>
+                        <li> <a class="has-arrow waves-effect" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Grup</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/tahsin/grup">Daftar Grup</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-lightbulb-on-outline"></i><span class="hide-menu">Hafalan</span></a>
+                        <li> <a class="has-arrow waves-effect" href="#" aria-expanded="false"><i class="mdi mdi-lightbulb-on-outline"></i><span class="hide-menu">Hafalan</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/tahsin/hafalan">Daftar Hafalan</a></li>
                             </ul>

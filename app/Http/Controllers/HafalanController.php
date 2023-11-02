@@ -9,7 +9,7 @@ class HafalanController extends Controller
 {
     public function index()
     {
-        $hafalan = Hafalan::all();
-        return view("tahsin.hafalan", ['hafalan'=> $hafalan]);
+        $hafalan = Hafalan::latest()->paginate(10);
+        return view("tahsin.hafalan", compact('hafalan'), ['hafalan'=> $hafalan]);
     }
 }
