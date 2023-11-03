@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function profile($id)
-    {
-        $category = Category::find($id);
-        return view('member.divisi', ['category' => $category]);   
-    }
 
     public function tambahg()
     {    
@@ -28,7 +23,7 @@ class CategoryController extends Controller
             $data->gambar = $request->file('gambar')->getClientOriginalName();
             $data->save();
         }
-        return redirect('/tahsin/grup')->with('success', 'Grup Berhasil Ditambahkan!');
+        return redirect('/')->with('success', 'Grup Berhasil Ditambahkan!');
     }
     public function index()
     {

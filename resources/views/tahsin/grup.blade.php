@@ -18,11 +18,12 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-6">
                         <div class="card">                            
                                     <div class="right-page-header">
                                             <div class="align-self-center">
-                                                <h4 class="card-title m-t-10 text-center">Daftar Grup</h4></div>
+                                                <h4 class="card-title m-t-10 text-center">Daftar Grup</h4>
+                                            </div>
                                     </div>
                                     @if ($message = Session::get('success'))
                                     <div class="alert alert-info" role="alert">
@@ -33,18 +34,16 @@
                                         <table id="demo-foo-addrow" class="table table-hover no-wrap contact-list">
                                             <thead>
                                                 <tr>
-                                                    <th>No.</th>
-                                                    <th>Grup</th>
-                                                    <th>Pengajar</th>
+                                                    <th style="text-align: center;">No.</th>
+                                                    <th style="text-align: center;">Grup</th>
                                                 </tr>
                                             </thead>
                                             @php $no = 1; @endphp
                                             @foreach($categories as $category)
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ $no++ }}</td>
-                                                    <td>{{ $category->grup }}</td>
-                                                    <td>Ustadz Ahmad Fauzi</td>
+                                                    <td style="text-align: center;">{{ $no++ }}</td>
+                                                    <td style="text-align: center;">{{ $category->grup }}</td>
                                                 </tr>
                                             </tbody>
                                             @endforeach

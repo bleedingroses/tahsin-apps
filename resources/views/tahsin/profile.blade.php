@@ -76,6 +76,7 @@
                                                     <th>No.</th>
                                                     <th>Surat</th>
                                                     <th>Ayat</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                                 @php $no = 1; @endphp
@@ -85,6 +86,7 @@
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{ $hafalan->surat }}</td>
                                                     <td>{{ $hafalan->pivot->ayat }}</td>
+                                                    <td>Delete</td>
                                                 </tr>
                                             </tbody>
                                                 @endforeach
