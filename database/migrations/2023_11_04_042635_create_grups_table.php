@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('grups', function (Blueprint $table) {
             $table->id();
-            $table->string('grup')->unique();
+            $table->string('nama');
+            $table->string('jadwal');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('grups');
     }
 };

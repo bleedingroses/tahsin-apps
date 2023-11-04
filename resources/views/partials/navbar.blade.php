@@ -49,8 +49,10 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a href="/tahsin"><i class="mdi mdi-book-open-page-variant"></i>Daftar Santri</a></li>
-                        <li> <a href="/tahsin/hafalan"><i class="mdi mdi-lightbulb-on-outline"></i>Hafalan</a></li>                   
+                        <li> <a href="/"><i class="mdi mdi-chart-pie"></i>Daftar Grup</a></li>
+                        <li> <a href="/santri"><i class="mdi mdi-hexagon-multiple"></i>Daftar Santri</a></li>
+                        <li> <a href="/materi"><i class="mdi mdi-book-open-page-variant"></i>Materi</a></li>                   
+                        <li> <a href="/hafalan"><i class="mdi mdi-lightbulb-on-outline"></i>Hafalan</a></li> 
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

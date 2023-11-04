@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TahsinController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HafalanController;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\GrupController;
+use App\Http\Controllers\SantriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +17,14 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/',[CategoryController::class, 'index']);
-Route::post('/tambahg',[CategoryController::class, 'tambahg']);
-Route::post('/simpang',[CategoryController::class, 'simpang']);
+Route::get('/',[GrupController::class, 'index']);
+Route::get('/grup/tambah',[GrupController::class, 'tambah']);
+Route::post('/grup/simpan',[GrupController::class, 'simpan']);
 
-Route::get('/tahsin',[TahsinController::class, 'show']);
-Route::get('/tahsin/tambah',[TahsinController::class, 'tambah']);
-Route::post('/tahsin/simpan',[TahsinController::class, 'simpan']);
+Route::get('/santri',[SantriController::class, 'index']);
+Route::get('/santri/tambah',[SantriController::class, 'tambah']);
+Route::post('/santri/simpan',[SantriController::class, 'simpan']);
+
 Route::get('/tahsin/{id}/ubah',[TahsinController::class, 'ubah']);
 Route::put('/tahsin/{id}',[TahsinController::class, 'update']);
 Route::delete('/tahsin/{id}',[TahsinController::class, 'destroy']);

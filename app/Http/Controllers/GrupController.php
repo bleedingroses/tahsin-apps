@@ -1,22 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Category;
-use App\Models\Tahsin;
+use App\Models\Grup;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class GrupController extends Controller
 {
-
-    public function tambahg()
-    {    
-        return view('tahsin.tambahg');
+    protected $guarded = [];
+    public function index()
+    {
+        $grup = Grup::all();
+        return view('grup.index', ['grup'=> $grup]);
     }
-
-    public function simpang(Request $request)
+    public function tambah()
+    {    
+        return view('grup.tambah');
+    }
+    public function simpan(Request $request)
     {
         // dd($request->except(['_token', 'submit']));
-        $data = Category::create($request->except(['_token', 'submit']));
+        $data = Grup::create($request->except(['_token', 'submit']));
         if($request->hasFile('gambar'))
         {
             $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
@@ -24,10 +27,5 @@ class CategoryController extends Controller
             $data->save();
         }
         return redirect('/')->with('success', 'Grup Berhasil Ditambahkan!');
-    }
-    public function index()
-    {
-        $categories = Category::all();
-        return view('tahsin.grup', ['categories'=> $categories]);
     }
 }
