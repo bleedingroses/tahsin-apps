@@ -14,4 +14,9 @@ class Grup extends Model
         return $this->hasMany(Santri::class);
     }
 
+    public function materi()
+    {
+        return $this->belongsToMany(Materi::class)->withPivot(['absensi']);
+    }
+
 }

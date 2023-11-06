@@ -32,4 +32,31 @@ class SantriController extends Controller
         }
         return redirect('/santri')->with('success', 'Data Berhasil Ditambahkan!');
     }
+
+    public function ubah($id)
+    {
+        $santri = Santri::find($id);
+        $grup = Grup::all(); 
+        return view('santri.ubah', compact('santri','grup'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $santri = Santri::find($id);
+        $santri->update($request->except(['_token', 'submit']));
+        if($request->hasFile('gambar'))
+        {
+            $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
+            $santri->gambar = $request->file('gambar')->getClientOriginalName();
+            $santri->save();
+        }
+        return redirect('/santri')->with('success', 'Data Berhasil Diubah!');
+    }
+
+    public function destroy($id)
+    {
+        $santri = Santri::find($id);
+        $santri->delete();
+        return redirect('/santri');
+    }
 }
