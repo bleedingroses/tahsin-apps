@@ -28,7 +28,6 @@
                             <div class="card">
                                 <article class="mb-5 border-bottom pb-4 text-center">
                                     <h2 class="text-center mb-4"><a href="#" class="text-decoration-none">{{ $grp->nama }}</a></h2>
-                                    <h4 class="text-center mb-8">{{ $grp->jadwal }}</h4>
                                 </article>
                             </div>
                         </div>

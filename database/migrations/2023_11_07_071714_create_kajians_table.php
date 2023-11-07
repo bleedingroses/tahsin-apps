@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grups', function (Blueprint $table) {
+        Schema::create('kajians', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->foreignId('materi_id');
+            $table->foreignId('grup_id');
+            $table->date('jadwal');
+            $table->date('absensi');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grups');
+        Schema::dropIfExists('kajians');
     }
 };

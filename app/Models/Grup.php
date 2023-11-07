@@ -19,4 +19,9 @@ class Grup extends Model
         return $this->belongsToMany(Materi::class)->withPivot(['absensi']);
     }
 
+    public function kajian()
+    {
+        return $this->hasMany(Kajian::class);
+    }
+
 }
