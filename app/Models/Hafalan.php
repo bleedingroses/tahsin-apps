@@ -10,8 +10,8 @@ class Hafalan extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function tahsin()
+    public function santri()
     {
-        return $this->belongsToMany(Tahsin::class)->withPivot(['ayat']);
+        return $this->belongsToMany(Santri::class)->withPivot(['ayat']);
     }
 }

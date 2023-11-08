@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('materi_id');
             $table->foreignId('grup_id');
             $table->date('jadwal');
-            $table->date('absensi');
+            $table->string('absensi');
             $table->timestamps();
         });
     }

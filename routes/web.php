@@ -22,6 +22,9 @@ use App\Http\Controllers\KajianController;
 Route::get('/',[GrupController::class, 'index']);
 Route::get('/grup/tambah',[GrupController::class, 'tambah']);
 Route::post('/grup/simpan',[GrupController::class, 'simpan']);
+Route::get('/grup/{id}/ubah',[GrupController::class, 'ubah']);
+Route::put('/grup/{id}',[GrupController::class, 'update']);
+Route::delete('/grup/{id}',[GrupController::class, 'destroy']);
 
 Route::get('/santri',[SantriController::class, 'index']);
 Route::get('/santri/tambah',[SantriController::class, 'tambah']);
@@ -29,6 +32,16 @@ Route::post('/santri/simpan',[SantriController::class, 'simpan']);
 Route::get('/santri/{id}/ubah',[SantriController::class, 'ubah']);
 Route::put('/santri/{id}',[SantriController::class, 'update']);
 Route::delete('/santri/{id}',[SantriController::class, 'destroy']);
+
+Route::get('/hafalan',[HafalanController::class, 'index']);
+Route::get('/hafalan/tambah',[HafalanController::class, 'tambah']);
+Route::post('/hafalan/simpan',[HafalanController::class, 'simpan']);
+Route::get('/hafalan/{id}/ubah',[HafalanController::class, 'ubah']);
+Route::put('/hafalan/{id}',[HafalanController::class, 'update']);
+Route::delete('/hafalan/{id}',[HafalanController::class, 'destroy']);
+Route::get('/hafalan/{id}/detail', [HafalanController::class, 'detail']);
+Route::post('/hafalan/{id}/hafiz', [HafalanController::class, 'hafiz']);
+Route::get('/hafalan/{id}/{idsantri}/hapus', [HafalanController::class,'hapus']);
 
 Route::get('/materi',[MateriController::class, 'index']);
 Route::get('/materi/tambah',[MateriController::class, 'tambah']);

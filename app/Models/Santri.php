@@ -14,4 +14,8 @@ class Santri extends Model
     {
         return $this->belongsTo(Grup::class);
     }
+    public function hafalan()
+    {
+        return $this->belongsToMany(Hafalan::class)->withPivot(['ayat']);
+    }
 }
