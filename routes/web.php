@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TahsinController;
 use App\Http\Controllers\HafalanController;
 use App\Http\Controllers\GrupController;
 use App\Http\Controllers\SantriController;
@@ -55,9 +54,3 @@ Route::post('/kajian/simpan',[KajianController::class, 'simpan']);
 Route::get('/kajian/{id}/ubah',[KajianController::class, 'ubah']);
 Route::put('/kajian/{id}',[KajianController::class, 'update']);
 Route::delete('/kajian/{id}',[KajianController::class, 'destroy']);
-
-Route::get('/tahsin/{id}/profile', [TahsinController::class, 'profile']);
-Route::post('/tahsin/{id}/tahfidz', [TahsinController::class, 'tahfidz']);
-
-
-Route::get('/tahsin/hafalan', [HafalanController::class,'index']);
