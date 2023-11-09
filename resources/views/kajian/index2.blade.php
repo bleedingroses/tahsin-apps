@@ -38,20 +38,27 @@
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
+                                                    <th>Aksi</th>
                                                     <th>Jadwal</th>
                                                     <th>Grup</th>
                                                     <th>Materi</th>
-                                                    <th>Keterangan</th>
                                                 </tr>
                                             </thead>
                                             @foreach($kajian as $index => $kjn)
                                                 <tbody>
                                                     <tr>
                                                         <td>{{ $index + $kajian->firstItem() }}</td>
+                                                        <td>
+                                                                <a class="btn btn-outline-info btn-rounded mb-2" href="/kajian/{{$kjn->id}}/ubah">Ubah</a>
+                                                                <form action="/kajian/{{$kjn->id}}" method="post">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <input class="btn btn-info btn-rounded" type="submit" value="Hapus">
+                                                                </form>
+                                                        </td>
                                                         <td>{{ $kjn->jadwal }}</td>
                                                         <td>{{ $kjn->grup->nama }}</td>
                                                         <td>{{ $kjn->materi->nama }}</td>
-                                                        <td>{{ $kjn->absensi }}</td>
                                                     </tr>
                                                 </tbody>
                                             @endforeach

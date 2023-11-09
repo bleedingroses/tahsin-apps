@@ -46,11 +46,11 @@ Route::get('/materi',[MateriController::class, 'index']);
 Route::get('/materi/tambah',[MateriController::class, 'tambah']);
 Route::post('/materi/simpan',[MateriController::class, 'simpan']);
 Route::delete('/materi/{id}',[MateriController::class, 'destroy']);
-Route::get('/materi/{id}/detail', [MateriController::class, 'detail']);
 
 Route::get('/kajian',[KajianController::class, 'index']);
 Route::get('/kajian/tambah',[KajianController::class, 'tambah']);
+Route::post('/kajian/absensi',[KajianController::class, 'absensi']);
 Route::post('/kajian/simpan',[KajianController::class, 'simpan']);
-Route::get('/kajian/{id}/ubah',[KajianController::class, 'ubah']);
-Route::put('/kajian/{id}',[KajianController::class, 'update']);
+// Route::get('/kajian/{id}/ubah',[KajianController::class, 'ubah']);
+// Route::put('/kajian/{id}',[KajianController::class, 'update']);
 Route::delete('/kajian/{id}',[KajianController::class, 'destroy']);

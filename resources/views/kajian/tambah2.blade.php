@@ -20,8 +20,8 @@
                         <form action="/kajian/simpan" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card">
-                                <label for="todayDate" class="form-label text-center"><h5>Jadwal Kajian</h5></label>
-                                <input type="date" class="form-control datepicker" name="jadwal" id="todayDate" required>
+                                <label for="jadwal" class="form-label text-center"><h5>Jadwal Kajian</h5></label>
+                                <input type="date" class="form-control datepicker" name="jadwal" id="jadwal" required>
                             </div><br>
                             <div class="card">
                                 <label for="grup_id" class="form-label text-center"><h5>Grup</h5></label>

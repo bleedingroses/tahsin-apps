@@ -79,6 +79,9 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}"></script>
+    <script>
+        document.getElementById("todayDate").valueAsDate = new Date();
+       </script>
     </body>
 
 </html>

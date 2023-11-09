@@ -42,14 +42,13 @@
                                                     <tr>
                                                         <td>{{ $index + $materi->firstItem() }}</td>
                                                         <td>
-                                                                <a class="btn btn-outline-info btn-rounded mb-2" href="/materi/{{$mtr->id}}/ubah">Ubah</a>
                                                                 <form action="/materi/{{$mtr->id}}" method="post">
                                                                     @csrf
                                                                     @method('delete')
                                                                     <input class="btn btn-info btn-rounded" type="submit" value="Hapus">
                                                                 </form>
                                                         </td>
-                                                        <td><a href="/materi/{{ $mtr->id }}/detail">{{ $mtr->nama }}</a></td>
+                                                        <td>{{ $mtr->nama }}</td>
                                                     </tr>
                                                 </tbody>
                                             @endforeach
