@@ -18,4 +18,8 @@ class Santri extends Model
     {
         return $this->belongsToMany(Hafalan::class)->withPivot(['ayat']);
     }
+    public function kajian()
+    {
+        return $this->belongsTo(Kajian::class);
+    }
 }

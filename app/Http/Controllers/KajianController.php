@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grup;
+use App\Models\Santri;
 use App\Models\Kajian;
-use App\Models\Materi;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class KajianController extends Controller
@@ -16,43 +17,19 @@ class KajianController extends Controller
     }
 
     public function tambah()
-    {
-        $materi = Materi::all();    
+    {    
         $grup = Grup::all();
-        return view('kajian.tambah', compact('materi', 'grup'));
+        $santri = Santri::all();
+        return view('kajian.tambah', compact('grup', 'santri'));
     }
 
     public function simpan(Request $request)
     {
-        // dd($request->except(['_token', 'submit']));
-        $kajian = Kajian::create($request->except(['_token', 'submit']));
-        if($request->hasFile('gambar'))
-        {
-            $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
-            $kajian->gambar = $request->file('gambar')->getClientOriginalName();
-            $kajian->save();
-        }
-        return redirect('/kajian')->with('success', 'Data Berhasil Ditambahkan!');
-    }
+        $request->merge([ 'absensi' => implode(',', (array) $request->get('absensi'))]);
 
-    public function ubah($id)
-    {
-        $kajian = Kajian::find($id);
-        $materi = Materi::all();
-        $grup = Grup::all(); 
-        return view('kajian.ubah', compact('materi','grup'));
-    }
-    public function update($id, Request $request)
-    {
-        $kajian = Kajian::find($id);
-        $kajian->update($request->except(['_token', 'submit']));
-        if($request->hasFile('gambar'))
-        {
-            $request->file('gambar')->move('img/', $request->file('gambar')->getClientOriginalName());
-            $kajian->gambar = $request->file('gambar')->getClientOriginalName();
-            $kajian->save();
-        }
-        return redirect('/kajian')->with('success', 'Data Berhasil Diubah!');
+        Kajian::create($request->except(['_token', 'submit']));
+
+        return redirect('/kajian')->with('success', 'Data Berhasil Ditambahkan!');
     }
     public function destroy($id)
     {

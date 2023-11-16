@@ -42,14 +42,9 @@ Route::get('/hafalan/{id}/detail', [HafalanController::class, 'detail']);
 Route::post('/hafalan/{id}/hafiz', [HafalanController::class, 'hafiz']);
 Route::get('/hafalan/{id}/{idsantri}/hapus', [HafalanController::class,'hapus']);
 
-Route::get('/materi',[MateriController::class, 'index']);
-Route::get('/materi/tambah',[MateriController::class, 'tambah']);
-Route::post('/materi/simpan',[MateriController::class, 'simpan']);
-Route::delete('/materi/{id}',[MateriController::class, 'destroy']);
-
 Route::get('/kajian',[KajianController::class, 'index']);
 Route::get('/kajian/tambah',[KajianController::class, 'tambah']);
-Route::post('/kajian/absensi',[KajianController::class, 'absensi']);
+// Route::get('/kajian/absensi',[KajianController::class, 'absensi']);
 Route::post('/kajian/simpan',[KajianController::class, 'simpan']);
 // Route::get('/kajian/{id}/ubah',[KajianController::class, 'ubah']);
 // Route::put('/kajian/{id}',[KajianController::class, 'update']);

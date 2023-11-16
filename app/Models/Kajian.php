@@ -10,13 +10,12 @@ class Kajian extends Model
 {
     use HasFactory, Sortable;
     protected $guarded = [];
-    public function materi()
-    {
-        return $this->belongsTo(Materi::class);
-    }
-
     public function grup()
     {
         return $this->belongsTo(Grup::class);
+    }
+    public function santri()
+    {
+        return $this->hasMany(Santri::class);
     }
 }

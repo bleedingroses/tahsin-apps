@@ -41,7 +41,7 @@
                                                     <th>Jadwal</th>
                                                     <th>Grup</th>
                                                     <th>Materi</th>
-                                                    <th>Keterangan</th>
+                                                    <th>Absensi</th>
                                                 </tr>
                                             </thead>
                                             @foreach($kajian as $index => $kjn)
@@ -50,8 +50,12 @@
                                                         <td>{{ $index + $kajian->firstItem() }}</td>
                                                         <td>{{ $kjn->jadwal }}</td>
                                                         <td>{{ $kjn->grup->nama }}</td>
-                                                        <td>{{ $kjn->materi->nama }}</td>
-                                                        <td>{{ $kjn->absensi }}</td>
+                                                        <td>{{ $kjn->materi }}</td>
+                                                        @if ($kjn->absensi != "")
+                                                        @foreach(explode(',', $kjn->absensi) as $info) 
+                                                          <td>{{$info}}</td>
+                                                        @endforeach
+                                                        @endif
                                                     </tr>
                                                 </tbody>
                                             @endforeach

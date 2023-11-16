@@ -51,8 +51,6 @@
                     <ul id="sidebarnav">
                         <li> <a href="/"><i class="mdi mdi-chart-pie"></i>Daftar Grup</a></li>
                         <li> <a href="/santri"><i class="mdi mdi-hexagon-multiple"></i>Daftar Santri</a></li>
-                        {{-- <li> <a href="/hafalan"><i class="mdi mdi-lightbulb-on-outline"></i>Hafalan</a></li> --}}
-                        <li> <a href="/materi"><i class="mdi mdi-book-open-page-variant"></i>Materi</a></li>
                         <li> <a href="/kajian"><i class="mdi mdi-calendar-multiple"></i>Kajian</a></li>
                     </ul>
                 </nav>
