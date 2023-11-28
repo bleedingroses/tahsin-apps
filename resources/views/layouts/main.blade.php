@@ -14,7 +14,6 @@
         <!-- Bootstrap Core CSS -->
         <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css') }}">
         <!-- Custom CSS -->
         <link href="{{ asset('horizon/css/style.css') }}" rel="stylesheet">
         <!-- page css -->
