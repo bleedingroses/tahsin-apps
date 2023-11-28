@@ -12,11 +12,7 @@ class Santri extends Model
     protected $guarded = [];
     public function grup()
     {
-        return $this->belongsTo(Grup::class);
-    }
-    public function hafalan()
-    {
-        return $this->belongsToMany(Hafalan::class)->withPivot(['ayat']);
+        return $this->belongsTo(Grup::class, 'grup_id');
     }
     public function kajian()
     {

@@ -13,7 +13,7 @@
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles justify-content-around">
-                    <a class="link-light" href="/kajian/tambah"><button type="button" class="btn btn-info btn-rounded">Tambah Jadwal Kajian</button></a>
+                    <a class="link-light" href="/belajar"><button type="button" class="btn btn-info btn-rounded">Tambah Jadwal Kajian</button></a>
                 </div>   
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -52,7 +52,7 @@
                                                         <td>{{ $kjn->grup->nama }}</td>
                                                         <td>{{ $kjn->materi }}</td>
                                                         @if ($kjn->absensi != "")
-                                                        @foreach(explode(',', $kjn->absensi) as $info) 
+                                                        @foreach(explode(', ', $kjn->absensi) as $info) 
                                                           <td>{{$info}}</td>
                                                         @endforeach
                                                         @endif

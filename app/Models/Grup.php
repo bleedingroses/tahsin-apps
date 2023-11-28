@@ -12,11 +12,11 @@ class Grup extends Model
     protected $guarded = [];
     public function santri()
     {
-        return $this->hasMany(Santri::class);
+        return $this->hasMany(Santri::class, 'grup_id');
     }
     public function kajian()
     {
-        return $this->hasMany(Kajian::class);
+        return $this->hasMany(Kajian::class, 'grup_id');
     }
 
 }

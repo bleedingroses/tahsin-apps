@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('kajians', function (Blueprint $table) {
             $table->id();
             $table->foreignId('grup_id');
-            $table->foreignId('santri_id')->nullable();
-            $table->date('jadwal');
+            $table->string('jadwal');
             $table->string('materi');
             $table->string('absensi');
             $table->timestamps();

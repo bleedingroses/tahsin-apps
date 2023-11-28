@@ -63,7 +63,7 @@
                                         </table>
                                     </div>
                         </div>
-                        <div class="d-flex justify-content-center">{{ $santri->links('vendor.pagination.simple-tailwind') }}</div>
+                        <div class="d-flex justify-content-center">{{ $santri->links('pagination::simple-tailwind') }}</div>
                     </div>
                 </div>
                 <!-- ============================================================== -->

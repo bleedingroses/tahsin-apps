@@ -187,5 +187,5 @@ return [
     ])->toArray(),
 
     'date_format' => 'd/m/Y',
-    'date_format_javascript' => 'DD/MM/YYYY',
+    'date_format_javascript' => 'D/M/Y',
 ];
